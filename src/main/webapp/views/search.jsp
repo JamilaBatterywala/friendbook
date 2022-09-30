@@ -46,25 +46,7 @@ document.getElementById("sendRequest").onclick = function() {
     //disable
     this.disabled = true;
  
-    $(document).ready(function(){
-        $('#sendRequest').click(function()
-        {   
-           var user=$('#email').val();
-           var pwd=$('#password').val();
-           $.ajax({
-                type: "POST",
-                url:"login",
-                data:{"email":user,"password":pwd},
-                success: function (data) {
-                   if(data=='True'){
-                     $(location).attr('href','home.jsp');
-                   }else{
-                       alert('Please enter right credentials');
-                   }
-                }
-              });                                
-            });
-          });
+   
     
     
 
