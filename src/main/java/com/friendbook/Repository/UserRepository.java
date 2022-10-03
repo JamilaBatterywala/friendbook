@@ -19,7 +19,7 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 	public User findById(int id);
 
 	
-	@Query(value = "select * from user u where u.username like %:username%",nativeQuery = true)
+	@Query(value = "select * from user u where u.username like %:username% ",nativeQuery = true)
 	public List<User> searchByUsername(@Param("username") String username);
 	
 }
