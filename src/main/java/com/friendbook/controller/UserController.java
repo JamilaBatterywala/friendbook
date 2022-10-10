@@ -79,9 +79,9 @@ public class UserController {
 		
 	}
 	
-	@RequestMapping("/login")
+	@RequestMapping("/loginpage")
 	public String login() {
-		return "login";
+		return "loginpage";
 	}
 	
 	@RequestMapping("/home")
@@ -156,7 +156,7 @@ public class UserController {
 	
 	}
 	else {
-		return "login";
+		return "loginpage";
 	}
 	
   }
@@ -204,6 +204,15 @@ public class UserController {
 		}
 		return "search";
 	}
+	
+	@GetMapping("/logout")
+	public String Logout(HttpSession session) {
+		session.invalidate();
+		
+		return "loginpage";
+	}
+	
+	
 	
 
 //	@PostMapping("/MyProfile/uploadImage")

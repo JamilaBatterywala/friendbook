@@ -19,8 +19,10 @@
 <body>
 <%@include file = "navbar.jsp" %>
 
-
-      <c:forEach var="user" items="${list}">
+		<c:if test= "${list = null}">
+			${message}
+		</c:if>
+	      <c:forEach var="user" items="${list}">
       <div class= "card" style="width: 20rem">
   <img class="card-img-top" src="<c:url value="/images/profilepic/${user.profilePic }"/>" alt="Card image cap">
   <div class="card-body">

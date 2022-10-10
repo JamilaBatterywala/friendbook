@@ -84,19 +84,3 @@ public class SendRequest {
 	
 
 }
-/*
-Follow:
-
-Follower:
-
-int id ,
-user id - user
-followers id : 
-
-following :
-int id ;
-user id
-following id; +1
-
-
-*/

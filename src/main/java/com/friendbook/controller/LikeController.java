@@ -15,7 +15,7 @@ public class LikeController {
 	private LikesServiceImpl likeImpl;
 	
 	@PostMapping("/home/like")
-	public String likepost(Likes likes, Model model)
+	public String likepost(Likes likes)
 	{
 		likeImpl.addLikes(likes);
 		return "home";

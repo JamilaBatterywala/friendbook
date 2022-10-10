@@ -15,7 +15,7 @@ public interface RequestService {
 	
 	public int accept(int id);
 	
-
+	public int delete(int id);
 	
 	
 }

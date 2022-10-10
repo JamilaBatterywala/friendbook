@@ -38,12 +38,19 @@
         	<img class = profilepic alt = "profilepic" width="25" height="25" src="<c:url value="/images/profilepic/${profilepic }"/>"/>
          <span class="sr-only">(current)</span></a>
       </li>
+      
      <li class="nav-item active">
         <a class="nav-link" href="#">Username : ${username } <span class="sr-only">(current)</span></a>
       </li>
+      <form>
        <li class="nav-item active">
-        <a class="nav-link" href="#">Logout <span class="sr-only">(current)</span></a>
+        <button  formmethod="get" formaction="/logout" type="submit">
+        Logout
+        </button>
+        
       </li>
+      </form>
+      
        
     </ul>
   </div>

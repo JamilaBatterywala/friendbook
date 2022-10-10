@@ -40,7 +40,7 @@ public class RequestController {
 	
 	
 	@PostMapping("/search")
-	public String sendRequest(SendRequest request , Model model) {
+	public String sendRequest(SendRequest request , Model model,String username) {
 		
 		request.setAcceptid(0);
 		requestService.saveRequest(request);
@@ -49,7 +49,8 @@ public class RequestController {
 			model.addAttribute("msg", "Request sent");
 			
 		}
-		return "redirect:/search";
+		return "redirect:/search?username="+username;
+		//return "redirect:/search";
 	}
 	
 	@RequestMapping("/notification")
@@ -78,11 +79,18 @@ public class RequestController {
 		return "notification";
 	}
 	@PostMapping("/notification")
-	public String acceptRequest(@RequestParam("id") int id,Followers followers,Following following, HttpServletRequest req,Model model) {
+	public String acceptRequest(@RequestParam("id") int id,Followers followers,Following following, HttpServletRequest req) {
 		this.session= req.getSession();
 		followersImpl.addFollower(followers);
 		followingImpl.addFollowing(following);
 		requestService.accept(id );
+		return "notification";
+	}
+	
+	@PostMapping("/declinerequest")
+	public String deleteRequest(@RequestParam("id") int id,Followers followers,Following following, HttpServletRequest req) {
+		this.session= req.getSession();
+		requestService.delete(id);
 		return "notification";
 	}
 	

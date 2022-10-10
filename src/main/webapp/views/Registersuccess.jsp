@@ -28,7 +28,7 @@
  <input id="textBox" type="hidden" name="text" class="input" value = "${user.name}">
 </div>
    <div class="d-flex justify-content-center">
-<button onclick="document.location='/login'">Login</button>
+<button onclick="document.location='/loginpage'">Login</button>
 </div>
 
 

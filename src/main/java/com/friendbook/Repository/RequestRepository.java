@@ -19,5 +19,7 @@ public interface RequestRepository extends CrudRepository<SendRequest, Integer> 
 	@Query(value = "update requests set accept_id = 1 where id =:id",nativeQuery = true)
 	public void acceptRequest( @Param("id") int id);
 	
+
+	
 }
 

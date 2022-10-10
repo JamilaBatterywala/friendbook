@@ -30,10 +30,10 @@
     <p class="card-text">Username : ${req.senderid.username}</p>
     <form>
                 <input type = "hidden" name = "id" value = ${req.id }>
-                <input type = "hidden" name = "userid" value = ${req.recieverid }>
+                <input type = "text" name = "userid" value = ${req.recieverid }>
                 <input type = "hidden" name = "followerid" value = ${req.senderid.uid }>
                   <input type = "hidden" name = "followingid" value = ${req.recieverid }>
-                <input type = "hidden" name = "useridfollowing" value = ${req.senderid.uid }>
+                <input type = "text" name = "useridfollowing" value = ${req.senderid.uid }>
                     <button id = "acceptrequest" type="submit" formaction="notification" formmethod="post">Accept Follow Request </button>
                                         <button id = "declinerequest" type="submit" formaction="declinerequest" formmethod="post">Decline Request </button>
                     </form>   

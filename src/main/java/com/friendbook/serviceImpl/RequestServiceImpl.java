@@ -35,8 +35,15 @@ public class RequestServiceImpl implements RequestService {
 		requestRepo.acceptRequest( id);
 		return 1;
 	}
+
+
+	@Transactional
+	public int delete(int id) {
+		requestRepo.deleteById(id);
+		return 1;
+	}
 	
-	
+
 	
 	
 

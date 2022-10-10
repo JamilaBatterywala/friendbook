@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -43,15 +45,6 @@ public class UserServiceImpl implements UserService {
 	
 	public boolean profileSave(User u, MultipartFile imageFile, String username) throws IOException {
 		String profilePhoto = "";
-//		String name = u.getName();
-//		String email = u.getEmail();
-//		String book = u.getFavBooks();
-//		String song = u.getFavSongs();
-//		String places = u.getFavPlaces();
-
-//		if (name.isEmpty() || email.isEmpty()) {
-//			return false;
-//		}
 		if (!imageFile.isEmpty()) {
 			profilePhoto = imageFile.getOriginalFilename().trim();
 			InputStream is = imageFile.getInputStream();
@@ -69,20 +62,16 @@ public class UserServiceImpl implements UserService {
 		if (!profilePhoto.isEmpty()) {
 			u.setProfilePic(profilePhoto);
 		}
-//		if (!name.isEmpty()) {
-//			u.setName(name);
-//		}
-//		if (!email.isEmpty()) {
-//			u.setEmail(email);
-//		}
-//		u.setFavBooks(book);
-//		u.setFavSongs(song);
-//		u.setFavPlaces(places);
 		userRepo.save(u);
 		return true;
 	}
-	
-	
+//	@Override
+//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	
+//	
 	
 
 }

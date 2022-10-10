@@ -15,7 +15,7 @@ public class CommentController {
 	private CommentServiceImpl commentImpl;
 	
 	@PostMapping("/home/comment")
-	public String commentPost(Comment comment , Model model) {
+	public String commentPost(Comment comment ) {
 		commentImpl.addComment(comment);
 		return "home";
 	}
