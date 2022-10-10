@@ -10,10 +10,10 @@ import com.friendbook.entity.Likes;
 import com.friendbook.services.LikeServices;
 
 @Service
-public class LikesServiceImpl implements LikeServices{
+public class LikesServiceImpl implements LikeServices {
 	@Autowired
 	private LikesRepository likeRepo;
-	
+
 	@Override
 	public Likes addLikes(Likes likes) {
 		likeRepo.save(likes);

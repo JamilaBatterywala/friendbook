@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
 import com.friendbook.entity.Comment;
 import com.friendbook.serviceImpl.CommentServiceImpl;
 
@@ -13,9 +12,9 @@ import com.friendbook.serviceImpl.CommentServiceImpl;
 public class CommentController {
 	@Autowired
 	private CommentServiceImpl commentImpl;
-	
+
 	@PostMapping("/home/comment")
-	public String commentPost(Comment comment ) {
+	public String commentPost(Comment comment) {
 		commentImpl.addComment(comment);
 		return "home";
 	}

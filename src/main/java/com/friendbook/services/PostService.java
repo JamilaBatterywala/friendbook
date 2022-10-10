@@ -10,14 +10,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.friendbook.entity.Post;
 
-
-@Component
 public interface PostService {
-	
 
-	public boolean postUpload(MultipartFile imageFile, HttpSession session)throws IOException;
-	
+	public boolean postUpload(MultipartFile imageFile, HttpSession session) throws IOException;
+
 	public List<Post> viewPost(int userid);
-	
+
 	public List<Post> viewPostofFollowing(int userid);
 }

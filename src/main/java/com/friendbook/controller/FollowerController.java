@@ -19,8 +19,7 @@ public class FollowerController {
 	private FollowersServiceImpl followersImpl;
 	private HttpSession session;
 	private int userId;
-	
-	
+
 //	@RequestMapping("/MyProfile")
 //	public String getFollowers(Followers followers,HttpServletRequest req,Model model) {
 //		this.userId = (int) session.getAttribute("uid");
@@ -28,6 +27,5 @@ public class FollowerController {
 //		System.out.println(follower);
 //		return "MyProfile";
 //	}
-	
 
 }

@@ -18,40 +18,46 @@ public class Followers {
 	@OneToOne
 	@JoinColumn(name = "follower_id")
 	private User followerid;
+
 	public Followers() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public Followers(int id, int userid, User followerid) {
 		super();
 		this.id = id;
 		this.userid = userid;
 		this.followerid = followerid;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public int getUserid() {
 		return userid;
 	}
+
 	public void setUserid(int userid) {
 		this.userid = userid;
 	}
+
 	public User getFollowerid() {
 		return followerid;
 	}
+
 	public void setFollowerid(User followerid) {
 		this.followerid = followerid;
 	}
+
 	@Override
 	public String toString() {
 		return "Followers [id=" + id + ", userid=" + userid + ", followerid=" + followerid + "]";
 	}
-	
-	
-	
 
 }

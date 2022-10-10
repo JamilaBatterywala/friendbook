@@ -17,7 +17,7 @@ import com.friendbook.entity.User;
 import com.friendbook.services.PostService;
 
 @Service
-public class PostServiceImpl implements PostService{
+public class PostServiceImpl implements PostService {
 	@Autowired
 	private PostRepository postRepo;
 
@@ -34,18 +34,18 @@ public class PostServiceImpl implements PostService{
 			while ((bytes = is.read()) != -1)
 				fs.write(bytes);
 			fs.close();
-		
-		int loginUserId = (int) session.getAttribute("uid");
-		Post postEntity = new Post();
-		User user=new User();
-		user.setUid(loginUserId);
-		postEntity.setPostpic(profilePhoto);
-		postEntity.setUserId(user);	
-		postRepo.save(postEntity);
-		return true;
-	}
+
+			int loginUserId = (int) session.getAttribute("uid");
+			Post postEntity = new Post();
+			User user = new User();
+			user.setUid(loginUserId);
+			postEntity.setPostpic(profilePhoto);
+			postEntity.setUserId(user);
+			postRepo.save(postEntity);
+			return true;
+		}
 		return false;
-	
+
 	}
 
 	@Override
@@ -58,9 +58,5 @@ public class PostServiceImpl implements PostService{
 	public List<Post> viewPostofFollowing(int userid) {
 		return this.postRepo.findbyFollowerid(userid);
 	}
-
-
-
-	
 
 }

@@ -11,15 +11,11 @@ import com.friendbook.entity.SendRequest;
 
 public interface RequestRepository extends CrudRepository<SendRequest, Integer> {
 
+	@Query(value = " select * from requests where reciever_id =:reciever_id and accept_id =:accept_id", nativeQuery = true)
+	public List<SendRequest> findByReciverId(@Param("reciever_id") int reciever_id, @Param("accept_id") int accept_id);
 
-	@Query(value = " select * from requests where reciever_id =:reciever_id and accept_id =:accept_id",nativeQuery = true)
-	public List<SendRequest> findByReciverId(@Param("reciever_id") int reciever_id,@Param("accept_id") int accept_id);
-	
 	@Modifying
-	@Query(value = "update requests set accept_id = 1 where id =:id",nativeQuery = true)
-	public void acceptRequest( @Param("id") int id);
-	
+	@Query(value = "update requests set accept_id = 1 where id =:id", nativeQuery = true)
+	public void acceptRequest(@Param("id") int id);
 
-	
 }
-

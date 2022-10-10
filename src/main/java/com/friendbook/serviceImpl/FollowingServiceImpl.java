@@ -10,16 +10,15 @@ import com.friendbook.entity.Following;
 import com.friendbook.services.FollowingService;
 
 @Service
-public class FollowingServiceImpl implements FollowingService{
+public class FollowingServiceImpl implements FollowingService {
 	@Autowired
 	private FollwingRepository followingRepo;
-	
+
 	public Following addFollowing(Following following) {
 		followingRepo.save(following);
 
 		return following;
 	}
-
 
 	public List<Following> getFollowing(int userid) {
 		return this.followingRepo.findByuserId(userid);

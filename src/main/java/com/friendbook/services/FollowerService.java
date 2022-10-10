@@ -6,10 +6,10 @@ import org.springframework.stereotype.Component;
 
 import com.friendbook.entity.Followers;
 
-@Component
 public interface FollowerService {
-	
+
 	public Followers addFollower(Followers followers);
+
 	public List<Followers> getFollower(int userid);
 
 }

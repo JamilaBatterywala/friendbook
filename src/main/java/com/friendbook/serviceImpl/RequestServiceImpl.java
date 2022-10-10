@@ -11,42 +11,33 @@ import com.friendbook.Repository.RequestRepository;
 import com.friendbook.Repository.UserRepository;
 import com.friendbook.entity.SendRequest;
 import com.friendbook.services.RequestService;
+
 @Service
 public class RequestServiceImpl implements RequestService {
 
-	
 	@Autowired
-    private RequestRepository requestRepo;
-	
+	private RequestRepository requestRepo;
+
 	public SendRequest saveRequest(SendRequest request) {
 		requestRepo.save(request);
 		return request;
 	}
 
-
-	public List<SendRequest> getRequests(int recieverid,int acceptid) {
+	public List<SendRequest> getRequests(int recieverid, int acceptid) {
 		return this.requestRepo.findByReciverId(recieverid, acceptid);
-		
-	}
 
+	}
 
 	@Transactional
-	public int accept( int id) {
-		requestRepo.acceptRequest( id);
+	public int accept(int id) {
+		requestRepo.acceptRequest(id);
 		return 1;
 	}
-
 
 	@Transactional
 	public int delete(int id) {
 		requestRepo.deleteById(id);
 		return 1;
 	}
-	
 
-	
-	
-
-	
-	
 }

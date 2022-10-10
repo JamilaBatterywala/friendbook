@@ -25,36 +25,39 @@ public class Following {
 		this.useridfollowing = useridfollowing;
 		this.followingid = followingid;
 	}
+
 	public Following() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	
 	public int getUseridfollowing() {
 		return useridfollowing;
 	}
+
 	public void setUseridfollowing(int useridfollowing) {
 		this.useridfollowing = useridfollowing;
 	}
+
 	public User getFollowingid() {
 		return followingid;
 	}
+
 	public void setFollowingid(User followingid) {
 		this.followingid = followingid;
 	}
+
 	@Override
 	public String toString() {
 		return "Following [id=" + id + ", useridfollowing=" + useridfollowing + ", followingid=" + followingid + "]";
 	}
-	
-	
-	
 
 }

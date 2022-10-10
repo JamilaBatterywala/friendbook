@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 @Entity
 @Table(name = "requests")
 public class SendRequest {
@@ -22,8 +23,6 @@ public class SendRequest {
 	private int recieverid;
 	@Column(name = "accept_id")
 	private int acceptid;
-	
-
 
 	public SendRequest(int id, User senderid, int recieverid, int acceptid) {
 		super();
@@ -33,32 +32,31 @@ public class SendRequest {
 		this.acceptid = acceptid;
 	}
 
-
 	public SendRequest() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
 	public User getSenderid() {
 		return senderid;
 	}
-
 
 	public void setSenderid(User senderid) {
 		this.senderid = senderid;
 	}
 
-
 	public int getRecieverid() {
 		return recieverid;
 	}
+
 	public void setRecieverid(int recieverid) {
 		this.recieverid = recieverid;
 	}
+
 	public int getAcceptid() {
 		return acceptid;
 	}
+
 	public void setAcceptid(int acceptid) {
 		this.acceptid = acceptid;
 	}
@@ -71,16 +69,10 @@ public class SendRequest {
 		this.id = id;
 	}
 
-
 	@Override
 	public String toString() {
 		return "SendRequest [id=" + id + ", senderid=" + senderid + ", recieverid=" + recieverid + ", acceptid="
 				+ acceptid + "]";
 	}
-
-	
-	
-	
-	
 
 }

@@ -22,6 +22,7 @@ public class Comment {
 	@OneToOne
 	@JoinColumn(name = "user_id")
 	private User userId;
+
 	public Comment(int id, Post postId, String postComment, User userId) {
 		super();
 		this.id = id;
@@ -29,43 +30,47 @@ public class Comment {
 		this.postComment = postComment;
 		this.userId = userId;
 	}
+
 	public Comment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public Post getPostId() {
 		return postId;
 	}
+
 	public void setPostId(Post postId) {
 		this.postId = postId;
 	}
+
 	public String getPostComment() {
 		return postComment;
 	}
+
 	public void setPostComment(String postComment) {
 		this.postComment = postComment;
 	}
+
 	public User getUserId() {
 		return userId;
 	}
+
 	public void setUserId(User userId) {
 		this.userId = userId;
 	}
+
 	@Override
 	public String toString() {
 		return "Comment [id=" + id + ", postId=" + postId + ", postComment=" + postComment + ", userId=" + userId + "]";
 	}
-	
-	
 
-	
-	
-	
-	
 }

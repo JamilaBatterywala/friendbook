@@ -14,22 +14,24 @@ import org.springframework.web.multipart.MultipartFile;
 import com.friendbook.Repository.UserRepository;
 import com.friendbook.entity.User;
 import com.friendbook.services.UserService;
+
 @Service
 public class UserServiceImpl implements UserService {
 
-
 	@Autowired
-    private UserRepository userRepo;
-	
+	private UserRepository userRepo;
+
 	public User login(String email, String password) {
-    User user = userRepo.findByEmailAndPassword(email, password);
-		
+		User user = userRepo.findByEmailAndPassword(email, password);
+
 		return user;
 	}
+
 	public User getDetails(String username) {
 		return userRepo.findByusername(username);
-		
-	}	
+
+	}
+
 	public User Update(int uid, String favSongs, String favBooks, String favPlaces) {
 		User user = userRepo.findById(uid);
 		user.setFavSongs(favSongs);
@@ -37,12 +39,12 @@ public class UserServiceImpl implements UserService {
 		user.setFavPlaces(favPlaces);
 		userRepo.save(user);
 		return user;
-	}	
+	}
+
 	public List<User> SearchUser(String username) {
 		return userRepo.searchByUsername(username);
 	}
-	
-	
+
 	public boolean profileSave(User u, MultipartFile imageFile, String username) throws IOException {
 		String profilePhoto = "";
 		if (!imageFile.isEmpty()) {
@@ -72,6 +74,5 @@ public class UserServiceImpl implements UserService {
 //	}
 //	
 //	
-	
 
 }

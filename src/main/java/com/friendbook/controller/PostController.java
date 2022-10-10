@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.friendbook.entity.Post;
 import com.friendbook.serviceImpl.PostServiceImpl;
+
 @Controller
 public class PostController {
 	@Autowired
@@ -23,10 +24,10 @@ public class PostController {
 	private HttpSession session;
 
 	@PostMapping("/UploadPost")
-	public String addPhotos(@RequestParam("postpic") MultipartFile imageFile,HttpSession session) throws IOException {
-		 postImpl.postUpload(imageFile,session);
-		
+	public String addPhotos(@RequestParam("postpic") MultipartFile imageFile, HttpSession session) throws IOException {
+		postImpl.postUpload(imageFile, session);
+
 		return "UploadPost";
-		
+
 	}
 }

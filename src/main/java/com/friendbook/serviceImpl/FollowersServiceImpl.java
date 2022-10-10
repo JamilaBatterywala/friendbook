@@ -13,16 +13,14 @@ import com.friendbook.services.FollowerService;
 public class FollowersServiceImpl implements FollowerService {
 	@Autowired
 	private FollowersRepository followersRepo;
-	
+
 	public Followers addFollower(Followers followers) {
 		followersRepo.save(followers);
 		return followers;
 	}
 
-
 	public List<Followers> getFollower(int userid) {
 		return this.followersRepo.findByuserId(userid);
 	}
-	
 
 }

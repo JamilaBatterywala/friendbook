@@ -1,65 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-     <%@page isELIgnored = "false" %>
+	pageEncoding="ISO-8859-1"%>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Sign Up</title>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <link rel="stylesheet" href="views/style.css">
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="views/style.css">
 </head>
-<body >
-<form class = "Registration">
-  <label>
-    <p class="label-txt">ENTER YOUR EMAIL</p>
-    <input type="text" name = "email" class="input">
-    <div class="line-box">
-      <div class="line"></div>
-    </div>
-  </label>
-  <label>
-    <p class="label-txt">ENTER YOUR NAME</p>
-    <input type="text" name = "name" class="input">
-    <div class="line-box">
-      <div class="line"></div>
-    </div>
-  </label>
-  <label>
-    <p class="label-txt">ENTER YOUR PASSWORD</p>
-    <input type="password" name = "password"class="input">
-    <div class="line-box">
-      <div class="line"></div>
-    </div>
-     </label>
-     <input type="hidden" name = "username" class="input" value = ${user.username }> 
-      
-         <div id="captchaBackground">
-            <canvas id="captcha">captcha text</canvas>
-           
-        <label>
-        <p class="label-txt">ENTER CAPTCHA</p>
-        </label>
-            <input id="textBox" type="text" name="text" class="input">
-            <div class="line-box">
-      <div class="line"></div>
-    </div>
-          <span id="output"></span>
-          
-            
-        </div>
-        <br>
-        <input id="submitButton" type="submit" onclick="return false">
-                <button style="margin:20px;" id="refreshButton" type="submit">Refresh</button>
-                
+<body>
+	<form class="Registration">
+		<label>
+			<p class="label-txt">ENTER YOUR EMAIL</p> <input type="text"
+			name="email" class="input">
+			<div class="line-box">
+				<div class="line"></div>
+			</div>
+		</label> <label>
+			<p class="label-txt">ENTER YOUR NAME</p> <input type="text"
+			name="name" class="input">
+			<div class="line-box">
+				<div class="line"></div>
+			</div>
+		</label> <label>
+			<p class="label-txt">ENTER YOUR PASSWORD</p> <input type="password"
+			name="password" class="input">
+			<div class="line-box">
+				<div class="line"></div>
+			</div>
+		</label> <input type="hidden" name="username" class="input"
+			value=${user.username }>
 
-  <button id = "signUp" type="submit" formaction="/Registersuccess" formmethod="post">Sign Up</button>
+		<div id="captchaBackground">
+			<canvas id="captcha">captcha text</canvas>
 
-</form>
-  
-<script type="text/javascript">
+			<label>
+				<p class="label-txt">ENTER CAPTCHA</p>
+			</label> <input id="textBox" type="text" name="text" class="input">
+			<div class="line-box">
+				<div class="line"></div>
+			</div>
+			<span id="output"></span>
+
+
+		</div>
+		<br> <input id="submitButton" type="submit"
+			onclick="return false">
+		<button style="margin: 20px;" id="refreshButton" type="submit">Refresh</button>
+
+
+		<button id="signUp" type="submit" formaction="/Registersuccess"
+			formmethod="post">Sign Up</button>
+
+	</form>
+
+	<script type="text/javascript">
 //document.querySelector() is used to select an element from the document using its ID
 let captchaText = document.querySelector('#captcha');
 var ctx = captchaText.getContext("2d");
